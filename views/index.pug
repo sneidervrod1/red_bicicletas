@@ -1,5 +1,132 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
+    .container.px-4.px-lg-5
+      a.navbar-brand(href="#page-top") INICIO
+      button.navbar-toggler.navbar-toggler-right(type="button", data-bs-toggle="collapse", data-bs-target="#navbarResponsive", aria-controls="navbarResponsive", aria-expanded="false", aria-label="Toggle navigation")
+        | Menu 
+        i.fas.fa-bars
+      #navbarResponsive.collapse.navbar-collapse
+        ul.navbar-nav.ms-auto
+          li.nav-item
+            a.nav-link(href="#about") Acerca de nosotros
+          li.nav-item
+            a.nav-link(href="#projects") Mapa
+          li.nav-item
+            a.nav-link(href="#signup") Contactanos
+    
+  // Masthead
+  header.masthead
+    .container.px-4.px-lg-5.d-flex.h-100.align-items-center.justify-content-center
+      .d-flex.justify-content-center
+        .text-center
+          h1.mx-auto.my-0.text-uppercase RED BICICLETAS
+          h2.text-white-50.mx-auto.mt-2.mb-5 La primera comunidad urbana de ciclistas
+          a.btn.btn-primary(href="#about") Comenzar
+
+  // About
+  section#about.about-section.text-center
+    .container.px-4.px-lg-5
+      .row.gx-4.gx-lg-5.justify-content-center
+        .col-lg-8
+          h2.text-white.mb-2 Pasion por las Bicis
+          p.text-white-50
+            | La pasión por el ciclismo es un viento que acaricia el rostro y enciende el corazón. En cada pedalada, se fusiona la fuerza física con la libertad del camino. La bicicleta no solo es medio de transporte, es una extensión del cuerpo, una danza con la carretera. La adrenalina de ascensos desafiantes y descensos vertiginosos se entrelaza con la serenidad de paisajes que solo se descubren a ritmo de pedales. El ciclismo no es solo ejercicio; es una conexión con la naturaleza, una búsqueda de superación personal. En cada kilómetro, se forja una historia de resistencia, determinación y amor por la ruta abierta.
+          img.img-fluid.mb4(src="images/img/pngegg.png", alt="Bicicleta andando")
+
+
+  // Projects
+  section#projects
+    .container.px-4.px-lg-5
+      #main_map
+
+      
+
+  // Signup
+  section#signup.signup-section
+    .container.px-4.px-lg-5
+      .row.gx-4.gx-lg-5
+        .col-md-10.col-lg-8.mx-auto.text-center
+          i.far.fa-paper-plane.fa-2x.mb-2.text-white
+          h2.text-white.mb-5 Subscribe to receive updates!
+          // * * * * * * * * * * * * * * *
+          // * * SB Forms Contact Form * *
+          // * * * * * * * * * * * * * * *
+          // This form is pre-integrated with SB Forms.
+          // To make this form functional, sign up at
+          // https://startbootstrap.com/solution/contact-forms
+          // to get an API token!
+          form#contactForm.form-signup(data-sb-form-api-token="API_TOKEN")
+            // Email address input
+            .row.input-group-newsletter
+              .col
+                input#emailAddress.form-control(type="email", placeholder="Enter email address...", aria-label="Enter email address...", data-sb-validations="required,email")
+              .col-auto
+                button#submitButton.btn.btn-primary.disabled(type="submit") Notify Me!
+            .invalid-feedback.mt-2(data-sb-feedback="emailAddress:required") An email is required.
+            .invalid-feedback.mt-2(data-sb-feedback="emailAddress:email") Email is not valid.
+            // Submit success message
+            // 
+            // This is what your users will see when the form
+            // has successfully submitted
+            #submitSuccessMessage.d-none
+              .text-center.mb-3.mt-2.text-white
+                .fw-bolder Form submission successful!
+                | To activate this form, sign up at
+                br
+                a(href="https://startbootstrap.com/solution/contact-forms") https://startbootstrap.com/solution/contact-forms
+
+            // Submit error message
+            // 
+            // This is what your users will see when there is
+            // an error submitting the form
+            #submitErrorMessage.d-none
+              .text-center.text-danger.mb-3.mt-2 Error sending message!
+
+  // Contact
+  section.contact-section.bg-black
+    .container.px-4.px-lg-5
+      .row.gx-4.gx-lg-5
+        .col-md-4.mb-3.mb-md-0
+          .card.py-4.h-100
+            .card-body.text-center
+              i.fas.fa-map-marked-alt.text-primary.mb-2
+              h4.text-uppercase.m-0 Address
+              hr.my-4.mx-auto
+              .small.text-black-50 4923 Market Street, Orlando FL
+        .col-md-4.mb-3.mb-md-0
+          .card.py-4.h-100
+            .card-body.text-center
+              i.fas.fa-envelope.text-primary.mb-2
+              h4.text-uppercase.m-0 Email
+              hr.my-4.mx-auto
+              .small.text-black-50
+                a(href="#!") hello@yourdomain.com
+        .col-md-4.mb-3.mb-md-0
+          .card.py-4.h-100
+            .card-body.text-center
+              i.fas.fa-mobile-alt.text-primary.mb-2
+              h4.text-uppercase.m-0 Phone
+              hr.my-4.mx-auto
+              .small.text-black-50 +1 (555) 902-8832
+      .social.d-flex.justify-content-center
+        a.mx-2(href="#!")
+          i.fab.fa-twitter
+        a.mx-2(href="#!")
+          i.fab.fa-facebook-f
+        a.mx-2(href="#!")
+          i.fab.fa-github
+  // Footer
+  footer.footer.bg-black.small.text-center.text-white-50
+    .container.px-4.px-lg-5 Copyright &amp;copy; Your Website 2023
+
+  // Bootstrap core JS
+  script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js")
+
+  // Core theme JS
+  script(src="javascripts/map.js")
+  script(src="javascripts/scripts.js")
+
+  script(src="https://cdn.startbootstrap.com/sb-forms-latest.js")
