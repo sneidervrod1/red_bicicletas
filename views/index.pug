@@ -1,10 +1,10 @@
 extends layout
 
 block content
-
+  #page-top
   nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
     .container.px-4.px-lg-5
-      a.navbar-brand(href="#page-top") INICIO
+      a#page-top.navbar-brand(href="#page-top") INICIO
       button.navbar-toggler.navbar-toggler-right(type="button", data-bs-toggle="collapse", data-bs-target="#navbarResponsive", aria-controls="navbarResponsive", aria-expanded="false", aria-label="Toggle navigation")
         | Menu 
         i.fas.fa-bars
@@ -126,6 +126,8 @@ block content
   script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js")
 
   // Core theme JS
+  script(src="javascripts/map.js")
+  script(src="javascripts/scripts.js")
   script(src="javascripts/map.js")
   script(src="javascripts/scripts.js")
 
